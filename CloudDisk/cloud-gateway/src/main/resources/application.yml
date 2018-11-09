@@ -1,0 +1,34 @@
+server:
+  port: 8099 
+
+spring:
+  application:
+    name: cloud-gateway
+    
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: 163_route
+          uri: http://www.163.com/
+          predicates:
+          - Path=/163
+        - id: consul-consumer
+          uri: lb://cloud-auth/oauth/**
+          predicates:
+          - Path=/oauth/**
+          filters:           
+           - name: Hystrix
+             args:
+               name: fallbackcmd
+               fallbackUri: forward:/hystrixTimeout
+    consul:
+      enabled: true
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: cloud-gateway
+        register: true
