@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.cloud</groupId>
-	<artifactId>menu</artifactId>
+	<artifactId>CloudDisk</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -51,6 +51,7 @@
 		<module>cloud-auth</module>
 		<module>cloud-gateway</module>
 		<module>cloud-provider</module>
+		<module>cloud-service</module>
 	</modules>
 
 </project>

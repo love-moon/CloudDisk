@@ -1,0 +1,28 @@
+server:
+  port: 8012 
+
+spring:
+  application:
+    name: cloud-service
+    
+
+  datasource:
+     url: jdbc:mysql://127.0.0.1:3306/cloud_database?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8
+     username: root
+     password: 123456
+     driverClassName: com.mysql.jdbc.Driver
+               
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB             
+               
+
+  cloud:              
+    consul:
+      enabled: true
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: cloud-service
+        register: true
