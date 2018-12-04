@@ -16,7 +16,7 @@ spring:
           uri: http://www.163.com/
           predicates:
           - Path=/163
-        - id: consul-consumer
+        - id: consul-oauth
           uri: lb://cloud-auth/oauth/**
           predicates:
           - Path=/oauth/**
@@ -25,6 +25,38 @@ spring:
              args:
                name: fallbackcmd
                fallbackUri: forward:/hystrixTimeout
+               
+        - id: consul-anth
+          uri: lb://cloud-auth/user/**
+          predicates:
+          - Path=/user/**
+          filters:           
+           - name: Hystrix
+             args:
+               name: fallbackcmd
+               fallbackUri: forward:/hystrixTimeout               
+               
+        - id: consul-anth
+          uri: lb://cloud-auth/menu/**
+          predicates:
+          - Path=/menu/**
+          filters:           
+           - name: Hystrix
+             args:
+               name: fallbackcmd
+               fallbackUri: forward:/hystrixTimeout    
+               
+        - id: consul-file
+          uri: lb://cloud-service/file/**
+          predicates:
+          - Path=/file/**
+          filters:           
+           - name: Hystrix
+             args:
+               name: fallbackcmd
+               fallbackUri: forward:/hystrixTimeout                    
+                                              
+               
     consul:
       enabled: true
       host: localhost
