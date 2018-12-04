@@ -5,6 +5,6 @@ Built-By: MOON
 Implementation-Vendor-Id: com.cloud
 Build-Jdk: 1.8.0_181
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/menu/cloud-provider
+ ot-starter-parent/CloudDisk/cloud-provider
 Created-By: Maven Integration for Eclipse
 

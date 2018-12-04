@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.cloud</groupId>
-    <artifactId>menu</artifactId>
+    <artifactId>CloudDisk</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>cloud-provider</artifactId>
